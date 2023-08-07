@@ -13,6 +13,12 @@ MORSE_CODE_DICT = {
 
 CHAR_LIST = [chr(i) for i in range(ord('a'), ord('z')+1)] + [str(i) for i in range(10)] + [" "]
 
+def ask_input():
+    '''Ask user for input and make string lowercase and list'''
+    string = st.text_input("What is the text to translate to morse? Please use alphanumeric characters (A-Z, 0-9)")
+    string_list = [char for char in string]
+    return string_list
+
 def main():
     st.title("Text to Morse Code Translator")
     
@@ -31,11 +37,6 @@ def main():
     morse_txt = " ".join([MORSE_CODE_DICT[char] for char in string_list])
     st.write(f"Translated Morse Code: {morse_txt}")
 
-def ask_input():
-    '''Ask user for input and make string lowercase and list'''
-    string = st.text_input("What is the text to translate to morse? Please use alphanumeric characters (A-Z, 0-9)")
-    string_list = [char for char in string]
-    return string_list
 
 if __name__ == "__main__":
     main()
