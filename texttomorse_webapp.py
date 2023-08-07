@@ -15,7 +15,7 @@ CHAR_LIST = [chr(i) for i in range(ord('a'), ord('z')+1)] + [str(i) for i in ran
 
 def ask_input():
     '''Ask user for input and make string lowercase and list'''
-    string = st.text_input("What is the text to translate to morse? Please use alphanumeric characters (A-Z, 0-9)")
+    string = st.text_input("What is the text to translate to morse? Please use alphanumeric characters (A-Z, 0-9)").lower()
     string_list = [char for char in string]
     return string_list
 
